@@ -608,9 +608,7 @@ export function ButtonList({
         </Flex>
       </HStack>
       <SimpleGrid columns={2} spacing={5}>
-        <Text pt="2" fontSize="sm">
-          {buttonGuard.mintText}
-        </Text>
+       
         <VStack>
           {process.env.NEXT_PUBLIC_MULTIMINT && buttonGuard.allowed ? (
             <NumberInput
