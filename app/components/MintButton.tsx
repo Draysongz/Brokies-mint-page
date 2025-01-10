@@ -569,7 +569,7 @@ export function ButtonList({
 
   const listItems = buttonGuardList.map((buttonGuard, index) => (
     <Box key={index} marginTop={"20px"}>
-      {console.log(buttonGuard.endTime)}
+      
       <Divider my="10px" />
       <HStack>
         <Heading size="xs" textTransform="uppercase">
