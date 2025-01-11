@@ -555,7 +555,7 @@ export function ButtonList({
       label: guard ? guard.label : "default",
       allowed: guard.allowed,
       header: text ? text.header : "header missing in settings.tsx",
-    //   mintText: text ? text.mintText : "mintText missing in settings.tsx",
+      //   mintText: text ? text.mintText : "mintText missing in settings.tsx",
       buttonLabel: text
         ? text.buttonLabel
         : "buttonLabel missing in settings.tsx",
@@ -569,7 +569,6 @@ export function ButtonList({
 
   const listItems = buttonGuardList.map((buttonGuard, index) => (
     <Box key={index} marginTop={"20px"}>
-      
       <Divider my="10px" />
       <HStack>
         <Heading size="xs" textTransform="uppercase">
@@ -607,9 +606,17 @@ export function ButtonList({
             )}
         </Flex>
       </HStack>
-      <SimpleGrid columns={2} spacing={5}>
-       
-        <VStack>
+
+      <SimpleGrid columns={1} spacing={5} justifyItems="center" width="100%">
+        <VStack
+          spacing={4}
+          align="center"
+          justify="center"
+          width="100%"
+          maxW="400px"
+          mx="auto"
+          p={4}
+        >
           {process.env.NEXT_PUBLIC_MULTIMINT && buttonGuard.allowed ? (
             <NumberInput
               value={numberInputValues[buttonGuard.label] || 1}
@@ -653,6 +660,7 @@ export function ButtonList({
               }
               key={buttonGuard.label}
               size="sm"
+              width="100%"
               backgroundColor="teal.100"
               isDisabled={!buttonGuard.allowed}
               isLoading={
