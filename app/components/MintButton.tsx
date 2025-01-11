@@ -203,12 +203,7 @@ const mintClick = async (
       const fetchedLut = await fetchAddressLookupTable(umi, lutPubKey);
       tables = [fetchedLut];
     } else {
-      createStandaloneToast().toast({
-        title: "The developer should really set a lookup table!",
-        status: "warning",
-        duration: 900,
-        isClosable: true,
-      });
+      console.log("no lut found");
     }
 
     const mintTxs: Transaction[] = [];
