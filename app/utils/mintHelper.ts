@@ -379,7 +379,7 @@ export const buildTx = (
 
 // simulate CU based on Sammys gist https://gist.github.com/stegaBOB/7c0cdc916db4524dd9c285f9e4309475
 export const getRequiredCU = async (umi: Umi, transaction: Transaction) => {
-  const defaultCU = 800_000;
+  const defaultCU = 1_400_000;
   const web3tx = toWeb3JsTransaction(transaction);
   let connection = new Connection(umi.rpc.getEndpoint(), "finalized");
   const simulatedTx = await connection.simulateTransaction(web3tx, {

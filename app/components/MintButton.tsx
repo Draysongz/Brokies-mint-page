@@ -166,6 +166,7 @@ const mintClick = async (
       const latestBlockhash = await umi.rpc.getLatestBlockhash({
         commitment: "finalized",
       });
+
       routeBuild = routeBuild.setBlockhash(latestBlockhash);
       const builtTx = await routeBuild.buildAndSign(umi);
       const sig = await umi.rpc
@@ -263,7 +264,7 @@ const mintClick = async (
     let signatures: Uint8Array[] = [];
     let amountSent = 0;
 
-    const sendPromises = signedTransactions.map((tx, index) => {
+    const sendPromises = signedTransactions.map(async(tx, index) => {
       return umi.rpc
         .sendTransaction(tx, {
           skipPreflight: true,
